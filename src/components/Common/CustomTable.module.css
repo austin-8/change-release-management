@@ -1,0 +1,37 @@
+/* CustomTable.module.css */
+
+.card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table thead th {
+    background-color: #5d5d5d;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 14px; /* Decrease font size */
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #e2e6ea;
+  }
+  

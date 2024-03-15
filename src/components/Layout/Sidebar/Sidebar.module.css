@@ -1,0 +1,26 @@
+.sidebar {
+    background-color: #343a40;
+    color: #fff; 
+    padding: 0px !important; 
+    height: calc(100vh - 90px) !important;
+  }
+  
+  .navItem {
+     border-bottom: 1px solid #464646;
+     cursor: pointer;
+  }
+
+  .navItem:hover {
+    background-color: #5d5d5d;
+  }
+
+  .navLink {
+    color: #fff !important; 
+    text-decoration: none;
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  .active {
+    background-color: #5d5d5d;
+  }
+  

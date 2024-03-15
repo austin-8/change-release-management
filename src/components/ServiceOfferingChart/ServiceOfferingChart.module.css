@@ -1,0 +1,12 @@
+.typeChart{
+  width: 48%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  max-height: 38rem;
+}
+
+.dropdown{
+  display: flex;
+  
+}
