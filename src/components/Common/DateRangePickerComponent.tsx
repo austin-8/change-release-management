@@ -60,7 +60,7 @@ const DateRangePickerComponent: React.FC<DateSectionProps> = ({ setDateRange, da
             borderRadius: '5px',
           }}
         >
-          <DateRange ranges={[dateRange]} onChange={handleSelect} />
+          {/* <DateRange ranges={[dateRange]} onChange={handleSelect} /> */}
         </div>
       )}
     </div>

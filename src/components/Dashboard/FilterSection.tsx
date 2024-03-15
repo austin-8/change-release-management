@@ -34,7 +34,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({ setSearchInput, setFilter
       state: "",
       serviceOffering: ""
     }));
-    setDateRange(prevFilterData => ({
+    setDateRange((prevFilterData: any) => ({
       ...prevFilterData,
       startDate: null,
       endDate: null,

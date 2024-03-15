@@ -55,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-date-range": "^1.4.9",
     "@types/react-resizable": "^3.0.7"
   }
 }
