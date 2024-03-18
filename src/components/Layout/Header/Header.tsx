@@ -5,7 +5,7 @@ import icon from "../../../assets/images/Uniliver Logo.svg"
 
 const Header: React.FC = () => {
   return (
-    <Navbar bg="dark" expand="lg" variant="dark" className='px-4 py-2 sticky-top'>
+    <Navbar bg="dark" expand="lg" variant="dark" className='px-4 py-3 sticky-top'>
         <NavbarBrand href="#">
           {/* Replace with your logo image or component */}
           <img src={icon} alt="C&RM" className={`${styles.logo}`} />

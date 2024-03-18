@@ -1,43 +1,42 @@
-import React, { useState } from 'react';
-import CustomTable from '../Common/CustomTable';
-import data from './data.json';
-import FilterSection from './FilterSection';
+import React from "react";
+import { Row, Col } from "react-bootstrap";
+import CountCard from "../Common/CountCard";
+import Type from "./Type";
+import Status from "./Status";
+import NewChanges from "./NewChanges";
+import ServiceOfferning from "./ServiceOffering";
+import data from '../../data/data.json'
 
 const Dashboard: React.FC = () => {
-  const [searchInput, setSearchInput] = useState("");
-  const [filterData, setFilterData] = useState({
-    type: "",
-    state: "",
-    serviceOffering: ""
-  })
-  const [dateRange, setDateRange] = useState(
-    {
-      startDate: null, 
-      endDate: null,   
-      key: 'selection',
-    },
-  );
-  console.log(dateRange)
-
-  // Column definitions
-  const columns = [
-    { header: 'Number', field: 'number' },
-    { header: 'Short description', field: 'shortDescription' },
-    { header: 'Type', field: 'type' },
-    { header: 'State', field: 'state' },
-    { header: 'Planned start date', field: 'plannedStartDate' },
-    { header: 'Planned end date', field: 'plannedEndDate' },
-    { header: 'Assigned to', field: 'assignedTo' },
-    { header: 'Closed', field: 'closed' },
-    { header: 'Service offering', field: 'serviceOffering' },
-    { header: 'Task type', field: 'taskType' }
-  ];
-
   return (
-    <div>
-      <FilterSection setSearchInput={setSearchInput} setFilterData={setFilterData} filterData={filterData} setDateRange={setDateRange} dateRange={dateRange} />
-      <CustomTable data={data} columns={columns} itemsPerPage={10} searchInput={searchInput} filterData={filterData} dateRange={dateRange} />
-    </div>
+    <React.Fragment>
+      <Row className="mt-2">
+        <Col xs={5}>
+          <Row>
+            <Col xs={6}>
+              <CountCard title={"Total Changes"} count={data.length} />
+            </Col>
+            <Col xs={6}>
+              <CountCard title={"Delayed Changes"} count={22} />
+            </Col>
+            <Col xs={12} className="mt-3">
+               <NewChanges />
+            </Col>
+          </Row>
+        </Col>
+        <Col xs={7}>
+          <ServiceOfferning />
+        </Col>
+      </Row>
+      <Row className="mt-4">
+        <Col xs={4}>
+          <Type />
+        </Col>
+        <Col xs={4}>
+          <Status />
+        </Col>
+      </Row>
+    </React.Fragment>
   );
 };
 

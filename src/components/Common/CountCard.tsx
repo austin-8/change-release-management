@@ -1,5 +1,6 @@
 import React from 'react'
-import { Card, CardBody } from 'react-bootstrap'
+import { Card, CardBody } from 'react-bootstrap';
+import styles from './CountCard.module.css'; 
 
 interface CountCardProps {
   title: string;
@@ -8,7 +9,7 @@ interface CountCardProps {
 
 const CountCard : React.FC<CountCardProps>  = ( {title ,count }) => {
   return (
-    <Card className='h-100'>
+    <Card className={`h-100 ${styles.countCard}`}>
         <CardBody>
             <span>{title}</span>
               <h1 className="mt-2">{count}</h1>

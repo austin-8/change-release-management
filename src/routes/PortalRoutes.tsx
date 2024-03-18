@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import {Routes, Route} from "react-router-dom"; 
 import Dashboard from "../components/Dashboard/Dashboard";
 import Reports from "../components/Reports/Reports";
@@ -8,11 +8,11 @@ const PortalRoutes: React.FC = () => {
       <Routes>
         <Route
           path="/"
-          element={<Reports />}
+          element={<Dashboard />}
         />
           <Route
           path="/reports"
-          element={<Dashboard />}
+          element={<Reports />}
         />
        </Routes>
   );

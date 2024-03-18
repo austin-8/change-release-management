@@ -1,4 +1,4 @@
-import data from '../components/Dashboard/data.json';
+import data from '../data/data.json';
 
 export function statusData(): string[] {
   const statusData = data.map(item => item.state);
