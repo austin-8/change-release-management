@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Nav, NavItem, Col } from 'react-bootstrap';
+import { Nav, NavItem} from 'react-bootstrap';
 import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './Sidebar.module.css'; 
+import BarChartIcon from '@mui/icons-material/BarChart';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/store';
 
 const SideBar: React.FC = () => {
+  const sidebarCollapsed = useSelector((state: RootState) => state.layout.sidebarCollapsed);
   const navigate  = useNavigate();
   const [activeKey, setActiveKey] = useState<string>('/');
+ 
 
   const handleItemClick = (key: string) => {
     navigate(key);
@@ -14,24 +19,24 @@ const SideBar: React.FC = () => {
 
   // Define an array of menu items
   const menuItems = [
-    { title: 'Dashboard', path: '/' },
-    { title: 'Reports', path: '/reports' },
+    { title: 'Dashboard', path: '/', icon: <BarChartIcon /> },
+    { title: 'Reports', path: '/reports',icon : "" },
     // Add more menu items as needed
   ];
 
   return (
-    <Col sm={2} className={`${styles.sidebar} d-flex flex-column `}>
+    <div className={`${styles.sidebar} d-flex flex-column `}>
       <Nav
         defaultActiveKey={activeKey}
         className="flex-column flex-grow-1 mt-1"
       >
         {menuItems.map((menuItem, index) => (
           <NavItem  onClick={() => handleItemClick(menuItem.path)} key={index} className={`${styles.navItem} ${activeKey === menuItem.path ? styles.active : ''} text-center p-3`}>
-              {menuItem.title}
+            {menuItem.icon}  { !sidebarCollapsed && menuItem.title}
           </NavItem>
         ))}
       </Nav>
-    </Col>
+    </div>
   );
 };
 

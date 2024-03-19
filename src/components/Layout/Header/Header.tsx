@@ -1,27 +1,35 @@
-import React from 'react';
-import { Navbar, Nav, Container, NavDropdown, NavbarBrand } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Navbar } from 'react-bootstrap';
+import { FiMenu } from 'react-icons/fi';
 import styles from './Header.module.css';
+import { useDispatch } from 'react-redux'; 
+import { toggleSidebar } from '../../../redux/layoutReducer';
 import icon from "../../../assets/images/Uniliver Logo.svg"
+import { Grid } from '@mui/material';
 
 const Header: React.FC = () => {
+  const dispatch = useDispatch(); 
+
+  const handleToggleSidebar = () => {
+    dispatch(toggleSidebar()); 
+  };
+
   return (
-    <Navbar bg="dark" expand="lg" variant="dark" className='px-4 py-3 sticky-top'>
-        <NavbarBrand href="#">
-          {/* Replace with your logo image or component */}
-          <img src={icon} alt="C&RM" className={`${styles.logo}`} />
-        </NavbarBrand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            {/* Profile Dropdown */}
-            <NavDropdown title={'Austin'} className="profile-dropdown">
-              <NavDropdown.Item href="#">Logout</NavDropdown.Item>
-              {/* Add more dropdown options as needed */}
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
+    
+          <Navbar bg="dark" expand="lg" variant="dark" className='sticky-top'>
+           <Grid container className={'m-1'}>
+                <Grid item lg={2} xs={4}>
+                  <div className={styles.logoBox}>
+                        <img src={icon} alt="C&RM" className={`${styles.logo}`} /> 
+                  </div>
+                </Grid>
+                <Grid item lg={10} xs={8} className={`d-flex ${styles.hamburgerBox}`}>
+                    <FiMenu className={styles.hamburger} onClick={handleToggleSidebar}/>
+                </Grid>
+            </Grid>
+        </Navbar>
       
-    </Navbar>
+  
   );
 };
 

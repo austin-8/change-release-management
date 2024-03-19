@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-
-// Import your reducers here (replace with your actual reducers)
-import authReducer from './redux/authReducer';
+import authReducer from './authReducer';
+import layoutReducer from './layoutReducer'; // Import the layout reducer
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer, 
+    auth: authReducer,
+    layout: layoutReducer, // Add the layout reducer to the store configuration
   },
 });
 

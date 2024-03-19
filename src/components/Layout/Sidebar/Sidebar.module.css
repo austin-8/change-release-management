@@ -1,17 +1,20 @@
 .sidebar {
-    background: linear-gradient(145deg, #2f343a, #444c53);
+    background: linear-gradient(145deg, #14181d, #566777);
     color: #fff; 
     padding: 0px !important; 
-    height: calc(100vh - 71px) !important;
+    height: 100vh !important;
   }
-  
+
   .navItem {
-     border-bottom: 1px solid #464646;
+     border-bottom: 1px solid #21343a;
      cursor: pointer;
+     margin:1px !important;
   }
 
   .navItem:hover {
-    background-color: #5d5d5d;
+    background-color: #1c252c;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
   .navLink {
@@ -21,6 +24,10 @@
   }
 
   .active {
-    background-color: #5d5d5d;
+    background-color: #3d4952 !important;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
+
+  
   

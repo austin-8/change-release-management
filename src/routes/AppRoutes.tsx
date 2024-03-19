@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "../redux/store";
 import PortalLayout from "../components/Layout/PortalLayout";
 import Login from "../components/Login/Login";
 import Dashboard from "../components/Dashboard/Dashboard";
