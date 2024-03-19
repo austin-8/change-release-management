@@ -1,21 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import { store } from './redux/store';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {createRoot} from 'react-dom/client'
+import axios from 'axios'
+import {Chart, registerables} from 'chart.js'
+import {QueryClient, QueryClientProvider} from 'react-query'
+import {ReactQueryDevtools} from 'react-query/devtools'
+import {MetronicI18nProvider} from './_metronic/i18n/Metronici18n'
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>
-);
+import './_metronic/assets/sass/style.scss'
+import './_metronic/assets/sass/plugins.scss'
+import './_metronic/assets/sass/style.react.scss'
+import {AppRoutes} from './app/routing/AppRoutes'
+import {AuthProvider, setupAxios} from './app/modules/auth'
 
-reportWebVitals();
+setupAxios(axios)
+Chart.register(...registerables)
+
+const queryClient = new QueryClient()
+const container = document.getElementById('root')
+if (container) {
+  createRoot(container).render(
+    <QueryClientProvider client={queryClient}>
+      <MetronicI18nProvider>
+        <AuthProvider>
+          <AppRoutes />
+        </AuthProvider>
+      </MetronicI18nProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  )
+}
