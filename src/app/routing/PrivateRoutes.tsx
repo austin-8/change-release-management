@@ -5,7 +5,7 @@ import TopBarProgress from 'react-topbar-progress-indicator'
 import {DashboardWrapper} from '../pages/dashboard/DashboardWrapper'
 import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
 import {WithChildren} from '../../_metronic/helpers'
-import BuilderPageWrapper from '../pages/layout-builder/BuilderPageWrapper'
+import ReportsPageWrapper from '../pages/reports/ReportsPageWrapper'
 
 const PrivateRoutes = () => {
   const WidgetsPage = lazy(() => import('../modules/widgets/WidgetsPage'))
@@ -16,7 +16,7 @@ const PrivateRoutes = () => {
       <Route element={<MasterLayout />}>
         {/* <Route path='auth/*' element={<Navigate to='/dashboard' />} /> */}
         <Route path='dashboard' element={<DashboardWrapper />} />
-        <Route path='reports' element={<BuilderPageWrapper />} />
+        <Route path='reports' element={<ReportsPageWrapper />} />
 
 
         {/* Lazy Modules */}

@@ -3,7 +3,6 @@ import {Outlet, useLocation} from 'react-router-dom'
 import {HeaderWrapper} from './components/header'
 import {ScrollTop} from './components/scroll-top'
 import {Content} from './components/content'
-import {FooterWrapper} from './components/footer'
 import {Sidebar} from './components/sidebar'
 import {
   InviteUsers,
@@ -35,16 +34,12 @@ const MasterLayout = () => {
                     <Outlet />
                   </Content>
                 </div>
-                {/* <FooterWrapper /> */}
               </div>
             </div>
           </div>
         </div>
-
-        {/* begin:: Modals */}
         <InviteUsers />
         <UpgradePlan />
-        {/* end:: Modals */}
         <ScrollTop />
       </ThemeModeProvider>
     </PageDataProvider>
