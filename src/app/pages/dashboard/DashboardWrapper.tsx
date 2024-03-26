@@ -6,6 +6,7 @@ import {
   CardsWidget17,
   CardsWidget20
 } from '../../../_metronic/partials/widgets'
+import DonutChart from './DonutCharts'
 
 const DashboardPage: FC = () => (
   <>
@@ -21,9 +22,13 @@ const DashboardPage: FC = () => (
       <div className='col-md-6 col-lg-6 col-xl-6 col-xxl-3 mb-md-5 mb-xl-10'>
         <CardsWidget17 className='h-md-100 mb-5 mb-xl-10' />
       </div>
+      <div  className='col-md-6 col-lg-6 col-xl-6 col-xxl-3 mb-md-5 mb-xl-10'> 
+         <DonutChart />
+      </div>
     </div>
   </>
 )
+
 
 const DashboardWrapper: FC = () => {
   return (
